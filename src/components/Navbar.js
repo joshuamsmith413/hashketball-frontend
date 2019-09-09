@@ -12,7 +12,9 @@ class Navbar extends React.Component {
                 <button onClick={this.props.backPage} className="ui left attached inverted button">Prev Page</button>
                 <button onClick={this.props.nextPage} className="right attached ui inverted button">Next Page</button>
                 <div className="ui input">
-                <input placeholder="search team or player" onChange={this.props.handleFilter}></input>
+
+                <input placeholder="search team or player" onChange={this.props.handleFilter}>
+                </input>
                 </div>
           </div>
         )

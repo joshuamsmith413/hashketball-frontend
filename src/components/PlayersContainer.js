@@ -83,6 +83,7 @@ class PlayersContainer extends React.Component {
 
 
     render(){
+			console.log(this.props.location.pathname)
       return(
 				<React.Fragment>
 					<div className="ui cards Playarea">

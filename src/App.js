@@ -25,12 +25,16 @@ class App extends React.Component {
 
     componentDidMount() {
       fetch('https://hashketball-backend.herokuapp.com/api/v1/players')
-        .then(r => r.json())
-        .then(data => {
-          this.setState({
-            players:data
-          })
+      .then(r => r.json())
+      .then(data => {
+        this.setState({
+          players:data
         })
+      })
+    }
+
+    resetFilter = () => {
+      return this.props.location.pathname !== "/" && this.state.filtered !== "" ? this.setState({filtered: ""}) : null
     }
 
   nextPage = () => {
@@ -135,7 +139,9 @@ class App extends React.Component {
   }
 
   render() {
-    return (<div className="App">
+    return (
+      <div className="App">
+        {this.resetFilter()}
         <Navbar
           filter={this.state.filter}
           handleFilter={this.handleFilter}
